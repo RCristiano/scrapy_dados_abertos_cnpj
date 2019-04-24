@@ -1,11 +1,17 @@
-<h1> Dados Abertos CNPJ
+Dados Abertos CNPJ
+==================
 
-<h2> Realiza o download dos Dados Abertos de CNPJ se foram atualizados desde o ultimo download
+Web Scraping Python with Scrapy framework
 
-## Start local crawl
+Realiza o download dos Dados Abertos de CNPJ se foram atualizados desde o último download
+
+### Run it local
 ```
 scrapy crawl Dados_Abertos_CNPJ
 ```
 
-## Framework
-> scrapy https://scrapy.org/
+### The scraping URL
+> http://receita.economia.gov.br/orientacao/tributaria/cadastros/cadastro-nacional-de-pessoas-juridicas-cnpj/dados-publicos-cnpj
+
+### Scrapy
+> https://scrapy.org/
