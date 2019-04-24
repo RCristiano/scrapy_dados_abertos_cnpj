@@ -36,4 +36,4 @@ docker-compose up -d
 > https://scrapy.org/
 
 ### TODO
-[ ] Schedule with Scrapyd
+- [ ] Schedule with Scrapyd
