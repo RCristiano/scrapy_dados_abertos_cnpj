@@ -1,3 +1,7 @@
 __pycache__
 last_update.json
 DADOS_ABERTOS_CNPJ.zip
+build
+dbs
+*egg*
+setup.py

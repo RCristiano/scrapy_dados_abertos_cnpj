@@ -1,0 +1,8 @@
+scrapy:
+  build: .
+  user: 1000:1000
+  volumes:
+    - .:/code
+  working_dir: /code
+  entrypoint: scrapy crawl Dados_Abertos_CNPJ
+  restart: always
