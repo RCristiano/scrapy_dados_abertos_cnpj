@@ -11,7 +11,10 @@ import urllib.request
 
 class DadosPublicosCnpjPipeline(object):
     def open_spider(self, spider):
-        self.file = open('last_update.json', 'r+')
+        try:
+            self.file = open('data/last_update.json', 'r+')
+        except:
+            self.file = open('data/last_update.json', 'w+')
 
     def close_spider(self, spider):
         self.file.close()
@@ -32,6 +35,6 @@ class DadosPublicosCnpjPipeline(object):
 
         urllib.request\
             .urlretrieve(item['download_link'],
-                        'DADOS_ABERTOS_CNPJ.zip')
+                        'data/DADOS_ABERTOS_CNPJ.zip')
 
         return item

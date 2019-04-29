@@ -1,6 +1,9 @@
 FROM python
+COPY requirements.txt /
+RUN pip install -r /requirements.txt
 RUN mkdir /code
 WORKDIR /code
-ADD requirements.txt /code/
-RUN pip install -r requirements.txt
-ADD . /code/
+RUN mkdir data
+COPY data/ data/
+COPY code/ .
+ENTRYPOINT ["scrapy",  "crawl", "Dados_Abertos_CNPJ"]
