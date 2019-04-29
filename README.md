@@ -26,8 +26,11 @@ Info and files in data folder
 ### The scraping URL
 > http://receita.economia.gov.br/orientacao/tributaria/cadastros/cadastro-nacional-de-pessoas-juridicas-cnpj/dados-publicos-cnpj
 
-### Scrapy
+### Framework
+![Scrapy logo](https://scrapy.org/img/scrapylogo.png "Scrapy logo")
 > https://scrapy.org/
 
 ### TODO
-- [ ] Schedule with Scrapyd
+- [ ] Deploy with [Scrapyd](https://scrapyd.readthedocs.io/en/stable/)
+- [ ] Schedule (quarterly)
+- [ ] [Scrapy Cloud](https://scrapinghub.com/scrapy-cloud)
