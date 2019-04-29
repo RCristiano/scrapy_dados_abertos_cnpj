@@ -11,13 +11,9 @@ Download the CNPJ Open Data if it has been updated since the last download
 ```sh
 git clone https://github.com/RCristiano/scrapy_dados_abertos_cnpj.git
 
-pip install -r requirements.txt
-
-cd dados_publicos_cnpj
+cd dados_publicos_cnpj/code
 
 pip install -r requirements.txt
-
-cd dados_publicos_cnpj
 
 scrapy crawl Dados_Abertos_CNPJ
 ```
