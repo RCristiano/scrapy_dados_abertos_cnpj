@@ -10,21 +10,21 @@ Download the CNPJ Open Data if it has been updated since the last download
 ### Run it local
 ```sh
 git clone https://github.com/RCristiano/scrapy_dados_abertos_cnpj.git
-cd dados_publicos_cnpj/code
+cd scrapy_dados_abertos_cnpj
 pip install -r requirements.txt
+cd code/dados_publicos_cnpj
 scrapy crawl Dados_Abertos_CNPJ
 ```
-Info and files in code/data folder
 
 ### Run it with Docker-Compose
 ```sh
 git clone https://github.com/RCristiano/scrapy_dados_abertos_cnpj.git
-docker-compose up -d
+docker-compose up -d --build
 ```
-Info and files in data folder
+> Info and files inside code/data folder
 
 ### The scraping URL
-> http://receita.economia.gov.br/orientacao/tributaria/cadastros/cadastro-nacional-de-pessoas-juridicas-cnpj/dados-publicos-cnpj
+- <http://receita.economia.gov.br/orientacao/tributaria/cadastros/cadastro-nacional-de-pessoas-juridicas-cnpj/dados-publicos-cnpj>
 
 ### Framework
 ![Scrapy logo](https://scrapy.org/img/scrapylogo.png "Scrapy logo")
