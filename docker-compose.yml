@@ -1,6 +1,14 @@
-scrapy:
-  build: .
-  user: 1000:1000
-  volumes:
-    - ./data/:/code/data/
-  restart: always
+version: "2"
+
+services:
+
+  scrapy:
+    build: .
+    image: scrapy_cnpj
+    container_name: scrapy_cnpj
+    user: 1000:1000
+    volumes:
+      - ./code/:/code/
+    working_dir: /code/
+    command: ["scrapy", "crawl", "Dados_Abertos_CNPJ"]
+    # restart: always
