@@ -33,8 +33,11 @@ class DadosPublicosCnpjPipeline(object):
         self.file.seek(0)
         self.file.write(line)
 
-        urllib.request\
-            .urlretrieve(item['download_link'],
-                        'data/DADOS_ABERTOS_CNPJ.zip')
+        try:
+            urllib.request\
+                .urlretrieve(item['download_link'],
+                            'data/DADOS_ABERTOS_CNPJ.zip')
+        except:
+            pass
 
         return item
