@@ -7,6 +7,8 @@
 
 import json
 import urllib.request
+import re
+from threading import Thread
 
 
 class DadosPublicosCnpjPipeline(object):
@@ -20,6 +22,12 @@ class DadosPublicosCnpjPipeline(object):
         self.file.close()
 
     def process_item(self, item, spider):
+
+        def down_files(link):
+            urllib.request \
+                .urlretrieve(link, 'data/{}' \
+                .format(re.search('[^\/]+$', link).group()))
+
         try:
             archive = json.load(self.file)
 
@@ -28,15 +36,14 @@ class DadosPublicosCnpjPipeline(object):
         except:
             pass
 
-        line =  json.dumps(dict(item))
+        data =  json.dumps(dict(item))
         self.file.truncate(0)
         self.file.seek(0)
-        self.file.write(line)
+        self.file.write(data)
 
         try:
-            urllib.request\
-                .urlretrieve(item['download_link'],
-                            'data/DADOS_ABERTOS_CNPJ.zip')
+            for link in item['download_links']:
+                Thread(target=down_files, args=(link,)).start()
         except:
             pass
 
